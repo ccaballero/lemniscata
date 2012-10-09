@@ -1,10 +1,6 @@
-documents_list:
-  url: document.html
-  param: { module: document, action: index }
-
-documents_new:
-  url: document/new.html
-  param: { module: document, action: new }
+templates_list:
+  url: templates.html
+  param: { module: templates, action: index }
 
 homepage:
   url:   /

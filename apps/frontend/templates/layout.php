@@ -9,18 +9,16 @@
         <?php include_javascripts() ?>
     </head>
     <body>
-        <div id="header">
-            <span class="title">lemniscata</span>
-        </div>
-        <div id="main">
-            <div id="nav">
-                <ul>
-                    <li><?php echo link_to('Inicio', 'homepage') ?></li>
-                    <li><?php echo link_to('Documentos', 'documents_list') ?></li>
-                </ul>
-            </div>
-            <div id="content">
-                <?php echo $sf_content ?>
+        <div id="wrapper">
+            <div id="header"><span class="title">lemniscata</span></div>
+            <div id="main">
+                <div id="nav">
+                    <ul>
+                        <li><?php echo link_to('∞', 'homepage') ?></li>
+                        <li><?php echo link_to('plantillas', 'templates_list') ?></li>
+                    </ul>
+                </div>
+                <div id="content"><?php echo $sf_content ?></div>
             </div>
         </div>
     </body>
