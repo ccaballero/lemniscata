@@ -3,52 +3,74 @@
     padding: 0px;
 }
 
-#wrapper {
+p {
+    text-align: justify;
+}
+
+body {
+    background-color: #007777;
+}
+
+#header {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    position: absolute;
+    left: -7.0em;
+    top: 8.0em;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+}
+
+#header .title {
+    color: #ffffff;
+    font-size: 4.0em;
+}
+
+#main {
+    background-color: #ffffff;
+    font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif;
+    font-size: 11pt;
+    margin: 0em 1.6em 0em 5.0em;
+    box-shadow: 0 6px 12px 3px #000000;
+}
+
+#footer {
+    font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif;
+    font-size: 11pt;
+    position: absolute;
+    bottom: 7.0em;
+    right: -6.7em;
+    color: #ffffff;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+}
+
+#footer a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0em 0.4em;
+}
+
+/*#wrapper {
     position: absolute;
     top: 0px;
     bottom: 0px;
     left: 0px;
     right: 0px;
-}
+}*/
 
-#header {
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 11pt;
-    position: absolute;
-    background-color: #007777;
-    width: 7.0em;
-    height: 100%;
-    left: 0px;
-}
-
-#header .title {
-    position: absolute;
-    bottom: 170px;
-    left: -150px;
-    color: #ffffff;
-    font-size: 6.0em;
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-}
-
-#main {
-    font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif;
-    font-size: 11pt;
+/*#main {
     position: absolute;
     top: 0em;
     bottom: 0em;
     right: 0em;
     left: 7.0em;
     background-color: #ffffff;
-    box-shadow: 0 6px 12px 3px #000000;
-}
+}*/
 
 #nav {
     background-color: #007777;
-}
-
-#nav ul {
-    padding: 0.25em 0em;
+    height: 22px;
 }
 
 #nav ul li {
@@ -63,14 +85,15 @@
 }
 
 #content {
+    padding: 1.0em;
     max-width: 960px;
     margin: 0px auto;
 }
 
-#content h1 {
+/*#content h1 {
     margin: 0.1em;
     font-size: 2.0em;
     font-weight: normal;
     border-bottom: 2px dashed #007777;
     color: #007777;
-}
+}*/
