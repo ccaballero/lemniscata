@@ -15,12 +15,12 @@
                 <div id="nav">
                     <ul>
                         <li><?php echo link_to('∞', 'homepage') ?></li>
-                        <li><?php echo link_to('plantillas', 'templates_list') ?></li>
+                        <li><?php echo link_to('templates', 'templates_list') ?></li>
                     </ul>
                 </div>
                 <div id="content"><?php echo $sf_content ?></div>
             </div>
-            <div id="footer"><a href="http://scesi.fcyt.umss.edu.bo/" target="_BLANK">SCESI</a><a class="border" href="http://www.memi.umss.edu.bo/" target="_BLANK">MEMI</a><a href="#">Código fuente</a></div>
+            <div id="footer"><a href="http://www.scesi.memi.umss.edu.bo/" target="_BLANK">SCESI</a><a class="border" href="http://www.memi.umss.edu.bo/" target="_BLANK">MEMI</a><a href="#">Source code</a></div>
         </div>
     </body>
 </html>

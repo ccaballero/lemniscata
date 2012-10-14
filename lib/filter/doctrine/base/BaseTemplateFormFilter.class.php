@@ -1,30 +1,32 @@
 <?php
 
 /**
- * Templates filter form base class.
+ * Template filter form base class.
  *
  * @package    .
  * @subpackage filter
  * @author     Carlos E. Caballero B.
  * @version    SVN: $Id: sfDoctrineFormFilterGeneratedTemplate.php 29570 2010-05-21 14:49:47Z Kris.Wallsmith $
  */
-abstract class BaseTemplatesFormFilter extends BaseFormFilterDoctrine
+abstract class BaseTemplateFormFilter extends BaseFormFilterDoctrine
 {
   public function setup()
   {
     $this->setWidgets(array(
       'label'      => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'content'    => new sfWidgetFormFilterInput(),
       'created_at' => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
       'updated_at' => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
     ));
 
     $this->setValidators(array(
       'label'      => new sfValidatorPass(array('required' => false)),
+      'content'    => new sfValidatorPass(array('required' => false)),
       'created_at' => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'updated_at' => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
     ));
 
-    $this->widgetSchema->setNameFormat('templates_filters[%s]');
+    $this->widgetSchema->setNameFormat('template_filters[%s]');
 
     $this->errorSchema = new sfValidatorErrorSchema($this->validatorSchema);
 
@@ -35,7 +37,7 @@ abstract class BaseTemplatesFormFilter extends BaseFormFilterDoctrine
 
   public function getModelName()
   {
-    return 'Templates';
+    return 'Template';
   }
 
   public function getFields()
@@ -43,6 +45,7 @@ abstract class BaseTemplatesFormFilter extends BaseFormFilterDoctrine
     return array(
       'id'         => 'Number',
       'label'      => 'Text',
+      'content'    => 'Text',
       'created_at' => 'Date',
       'updated_at' => 'Date',
     );

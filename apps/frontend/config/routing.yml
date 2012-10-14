@@ -2,6 +2,10 @@ templates_list:
   url: templates.html
   param: { module: templates, action: index }
 
+templates_template_view:
+  url: templates/:id/view.html
+  param: { module: templates, action: view }
+
 homepage:
   url:   /
   param: { module: frontpage, action: index }

@@ -1,6 +1,10 @@
-Templates:
+Template:
   actAs: [Timestampable]
   columns:
     label:
       type: string(255)
       notnull: true
+    content:
+      type: clob
+      default: ''
+

@@ -1,17 +1,36 @@
-# # Populate this file with data to be loaded by your ORM's *:data-load task.
-# # You can create multiple files in this directory (i.e. 010_users.yml,
-# # 020_articles.yml, etc) which will be loaded in alphabetical order.
-# # 
-# # See documentation for your ORM's *:data-load task for more information.
-# 
-# User:
-#   fabien:
-#     username: fabien
-#     password: changeme
-#     name:     Fabien Potencier
-#     email:    fabien.potencier@symfony-project.com
-#   kris:
-#     username: Kris.Wallsmith
-#     password: changeme
-#     name:     Kris Wallsmith
-#     email:    kris.wallsmith@symfony-project.com
+Template:
+  t1:
+    label: hello world
+    content: |
+      \documentclass[letterpaper,11pt]{letter}
+
+      \usepackage[utf8]{inputenc}
+      \usepackage{url}
+
+      \begin{document}
+
+      hello world.
+
+      \end{document}
+  t2:
+    label: dynamic hello world
+  t3:
+    label: the letter
+  t4:
+    label: multiple pages
+  t5:
+    label: the tables
+  t6:
+    label: the huge name that does not fit in the box that I put in this place
+  t7:
+    label: the graphics
+  t8:
+    label: the special effects
+  t9:
+    label: to arrays
+  t10:
+    label: the matrix
+  t11:
+    label: hooks
+  t12:
+    label: the partials
