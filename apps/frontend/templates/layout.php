@@ -20,7 +20,7 @@
                 </div>
                 <div id="content"><?php echo $sf_content ?></div>
             </div>
-            <div id="footer"><a href="http://www.scesi.memi.umss.edu.bo/" target="_BLANK">SCESI</a><a class="border" href="http://www.memi.umss.edu.bo/" target="_BLANK">MEMI</a><a href="#">Source code</a></div>
+            <div id="footer"><a href="http://www.scesi.memi.umss.edu.bo/" target="_BLANK">scesi</a><a href="http://www.memi.umss.edu.bo/" target="_BLANK">memi</a><a href="#">source code</a></div>
         </div>
     </body>
 </html>
