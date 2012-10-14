@@ -1,0 +1,25 @@
+syntax: glob
+*~
+*.swp
+*.orig
+*.tmp.
+*.bak
+*.log
+
+*.toc
+*.aux
+*.nav
+*.out
+*.snm
+*.vrb
+*.synctex.gz
+
+.svn/
+.cache/
+.settings/
+.buildpath
+.project
+
+cache/
+log/
+
