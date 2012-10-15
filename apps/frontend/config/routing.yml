@@ -6,6 +6,10 @@ templates_template_view:
   url: templates/:id/view.html
   param: { module: templates, action: view }
 
+templates_template_generate:
+  url: templates/:id/generate.html
+  param: { module: templates, action: generate }
+
 homepage:
   url:   /
   param: { module: frontpage, action: index }
