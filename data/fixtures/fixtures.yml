@@ -14,6 +14,17 @@ Template:
       \end{document}
   t2:
     label: dynamic hello world
+    content: |
+      \documentclass[letterpaper,11pt]{letter}
+
+      \usepackage[utf8]{inputenc}
+      \usepackage{url}
+
+      \begin{document}
+
+      [[greeting]]
+
+      \end{document}
   t3:
     label: the letter
   t4:

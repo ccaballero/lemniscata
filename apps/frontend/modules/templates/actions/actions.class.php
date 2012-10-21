@@ -12,6 +12,12 @@ class templatesActions extends sfActions
         $this->template = Doctrine::getTable('template')
             ->find($request->getParameter('id'));
         $this->forward404Unless($this->template);
+
+        $tpl = $this->template->content;
+        $variables_list = array();
+        preg_match_all('/\[\[.*\]\]/', $tpl, $variables_list);
+
+        $this->tpl = preg_replace('/\[\[(.*)\]\]/', '<span class="highlight">[[$1]]</span>', $tpl);
     }
 
     public function executeGenerate(sfWebRequest $request) {
