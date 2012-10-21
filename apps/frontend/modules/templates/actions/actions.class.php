@@ -17,22 +17,36 @@ class templatesActions extends sfActions
     public function executeGenerate(sfWebRequest $request) {
         $this->template = Doctrine::getTable('template')
             ->find($request->getParameter('id'));
+        $this->forward404Unless($this->template);
+
+        $job_number = sha1($this->template->id);
+
+        $tmp_dir = sfConfig::get('sf_root_dir') . DIRECTORY_SEPARATOR . 'tmp';
+        $pdflatex_path = sfConfig::get('app_pdflatex');
+
+        $tex_file = $tmp_dir . DIRECTORY_SEPARATOR . $job_number . '.tex';
+        $pdf_file = $tmp_dir . DIRECTORY_SEPARATOR . $job_number . '.pdf';
+
+        $fp = fopen($tex_file, 'w');
+        fwrite($fp, $this->template->content);
+        fclose($fp);
+
+        exec($pdflatex_path . ' -output-directory ' . $tmp_dir . ' ' . $tex_file);
+
+        $this->setLayout(false);
+        sfConfig::set('sf_web_debug', false);
+
+        $this->forward404Unless(file_exists($pdf_file));
+
+        $this->getResponse()->clearHttpHeaders();
+        $this->getResponse()->setHttpHeader('Pragma: public', true);
+        $this->getResponse()->setContentType('application/pdf');
+        $this->getResponse()->setHttpHeader('Content-Disposition', 'attachment; filename="' . $this->template->label . '.pdf' . '"');
         
-//        define('APPLICATION_PATH', realpath(dirname(__FILE__) . '/..'));
+        $this->getResponse()->sendHttpHeaders();
+        $this->getResponse()->setContent(readfile($pdf_file));
 
-//        $pdflatex_path = '/usr/bin/pdflatex';
-//        $tmp_dir = APPLICATION_PATH . '/tmp';
-
-//        $tpl_dir = APPLICATION_PATH . '/tpl';
-//        $tpl_file = 'carta.tex';
-//
-//        $tpl = file_get_contents("$tpl_dir/$tpl_file");
-//
-//        $variables_list = array();
-//        preg_match_all('/\[\[.*\]\]/', $tpl, $variables_list);
-//
-//        $tpl = preg_replace('/\[\[(.*)\]\]/', '<span style="background-color:#f4f458;">[[$1]]</span>', $tpl);
-
-        // exec($pdflatex_path . ' -output-directory ' . $tmp_dir . ' ' . $tpl, $b, $c);
+        return sfView::NONE;
+//        $this->redirect('templates/view?id=' . $this->template->id);
     }
 }
