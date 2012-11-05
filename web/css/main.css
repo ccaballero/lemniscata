@@ -9,7 +9,7 @@ a {
 }
 
 body {
-    background-color: #007777;
+    background-color: #808080;
 }
 
 #header {
@@ -51,7 +51,7 @@ body {
 }
 
 #nav {
-    background-color: #007777;
+    background-color: #808080;
     height: 22px;
     box-shadow: 0px 2px 10px 0px #000000;
 }
@@ -75,7 +75,7 @@ body {
 
 #content h1 {
     font-family: Georgia, "Times New Roman", Times, serif;
-    background-color: #004040;
+    background-color: #404040;
     border-bottom-left-radius: 0.3em;
     border-bottom-right-radius: 0.3em;
     margin: 0em 0em 0.6em 0em;
@@ -137,4 +137,10 @@ pre.latex {
 .highlight {
     background-color: #ffffff;
     padding: 2px 1px;
+}
+
+div.tree {
+    margin: 1.0em auto;
+    width: 500px;
+    height: auto;
 }
